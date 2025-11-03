@@ -16,7 +16,7 @@
   "categories": [
     "Browser"
   ],
-  "friendly_name": "Chromium",
+  "friendly_name": "SW EXAMPLE - Chromium",
   "architecture": [
     "amd64",
     "arm64"
