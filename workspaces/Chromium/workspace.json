@@ -27,7 +27,9 @@
       "image": "kasmweb/chromium:develop",
       "uncompressed_size_mb": 2170,
       "available_tags": [
-        "develop"
+        "develop",
+        "1.17.0",
+        "1.18.0"
       ]
     }
   ]
