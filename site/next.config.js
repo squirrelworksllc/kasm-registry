@@ -6,7 +6,7 @@ const nextConfig = {
   env: {
     name: 'SquirrelWorks Kasm Repository',
     description: 'SquirrelWorks 3rd Party Kasm Workspace Repository.',
-    icon: '/swlogo.png',
+    icon: 'https://squirrelworksllc.github.io/kasm-registry/1.1/swlogo.png',
     listUrl: 'https://squirrelworksllc.github.io/kasm-registry/',
     contactUrl: '',
   },
