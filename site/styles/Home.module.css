@@ -29,7 +29,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #706e66;
   text-decoration: none;
 }
 
@@ -121,7 +121,7 @@
     border-color: #222;
   }
   .code {
-    background: #173;
+    background: #111;
   }
   .logo img {
     filter: invert(1);
