@@ -12,7 +12,7 @@
    - [Folder structure](#folder-structure)
    - [Schema](#schema)
    - [New schema version](#new-schema-version)
-1. [Discovery](#2-dicovery)
+1. [Discovery](#2-discovery)
 
 
 &nbsp;
