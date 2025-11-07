@@ -16,7 +16,7 @@
   "categories": [
     "Browser"
   ],
-  "friendly_name": "DEV - Chromium Test",
+  "friendly_name": "DEV - Firefox Test",
   "architecture": [
     "amd64",
     "arm64"
@@ -24,7 +24,7 @@
   "compatibility": [
     {
       "version": "1.18.x",
-      "image": "kasmweb/chromium:develop",
+      "image": "kasmweb/firefox:develop",
       "uncompressed_size_mb": 2170,
       "available_tags": [
         "develop",
