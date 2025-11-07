@@ -8,11 +8,11 @@
 
 ## Contents
 
-1. [Creating Workspaces](#5-creating-workspaces)
+1. [Creating Workspaces](#1-creating-workspaces)
    - [Folder structure](#folder-structure)
    - [Schema](#schema)
    - [New schema version](#new-schema-version)
-1. [Discovery](#6-dicovery)
+1. [Discovery](#2-dicovery)
 
 
 &nbsp;
