@@ -1,7 +1,7 @@
 {
   "description": "Bitcurator is an Ubuntu-based Linux distribution designed to support the needs of library, archive, and museum professionals processing born-digital materials. It includes a suite of open source disk imaging, digital forensics, and data analysis tools curated to support modern workflows.",
   "docker_registry": "https://index.docker.io/v1/",
-  "image_src": "BitCurator-Basic-400px",
+  "image_src": "BitCurator-Basic-400px.png",
   "run_config": {
     "hostname": "bitcurator"
   },
