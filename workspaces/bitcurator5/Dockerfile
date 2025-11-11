@@ -1,24 +1,29 @@
 # Originally from "https://github.com/BitCurator/bitcurator-docker/blob/main/Dockerfile.noble"
 # For a working Docker image see "https://hub.docker.com/repository/docker/squirrelworksllc/bitcurator5"
 
+#############################################
 FROM kasmweb/kasmweb/ubuntu-noble-desktop
 USER root
-
-ENV HOME /home/kasm-default-profile
-ENV STARTUPDIR /dockerstartup
-ENV INST_SCRIPTS $STARTUPDIR/install
+ENV HOME=/home/kasm-default-profile
+ENV STARTUPDIR=/dockerstartup
+ENV INST_SCRIPTS=$STARTUPDIR/install
 WORKDIR $HOME
+
 
 ######### Bitcurator Container Customizations ###########
 
-# do we need all the switches? what happens if we leave it all default? install under kasm user?
-# will HEAVILY need to customize to point to kasm user's stuff!
-ARG BITCURATOR_CLI=3.0.0
-ARG BITCURATOR_VERSION=5.1.0
+# Step 1 - Download and prep Bitcurator CLI
+RUN apt-get update && apt-get -y
+RUN apt-get install nano build-essential gcc make perl dkmswget curl gnupg sudo -y
+RUN curl -Lo /tmp wget https://github.com/BitCurator/bitcurator-cli/releases/download/v2.0.0/bitcurator-cli-linux
+RUN chmod +x /tmp/bitcurator-cli-linux
 
-RUN apt-get update && apt-get install nano wget curl gnupg sudo -y && \
-curl -Lo /usr/local/bin/bitcurator https://github.com/bitcurator/bitcurator-cli/releases/download/v${BITCURATOR_CLI}/bitcurator-cli-linux && \
-chmod +x /usr/local/bin/bitcurator
+
+
+#TODO - Need to set the user to kasm (who is that anyway?)
+#       then execute all these as Kasm so the menus and such appear AS Kasm
+#       then add Kasm to proper groups AND as root
+#       be sure the workspace's settings are to run as root when I get that far!
 
 RUN groupadd -r bcadmin && \
 useradd -r -g bcadmin -d /home/bcadmin -s /bin/bash -c "BitCurator User" bcadmin && \
