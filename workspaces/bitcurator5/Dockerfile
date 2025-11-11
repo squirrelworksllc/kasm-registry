@@ -1,14 +1,21 @@
 # Originally from "https://github.com/BitCurator/bitcurator-docker/blob/main/Dockerfile.noble"
 # For a working Docker image see "https://hub.docker.com/repository/docker/squirrelworksllc/bitcurator5"
-FROM ubuntu:24.04
 
-LABEL version="3.0"
-LABEL description="BitCurator Docker based on Ubuntu 24.04 LTS"
-LABEL maintainer="https://github.com/bitcurator/bitcurator-docker"
+FROM kasmweb/kasmweb/ubuntu-noble-desktop
+USER root
+
+ENV HOME /home/kasm-default-profile
+ENV STARTUPDIR /dockerstartup
+ENV INST_SCRIPTS $STARTUPDIR/install
+WORKDIR $HOME
+
+######### Bitcurator Container Customizations ###########
+
+# do we need all the switches? what happens if we leave it all default? install under kasm user?
+# will HEAVILY need to customize to point to kasm user's stuff!
 ARG BITCURATOR_CLI=3.0.0
 ARG BITCURATOR_VERSION=5.1.0
 
-ENV TERM=linux
 RUN apt-get update && apt-get install nano wget curl gnupg sudo -y && \
 curl -Lo /usr/local/bin/bitcurator https://github.com/bitcurator/bitcurator-cli/releases/download/v${BITCURATOR_CLI}/bitcurator-cli-linux && \
 chmod +x /usr/local/bin/bitcurator
