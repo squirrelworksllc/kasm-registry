@@ -30,8 +30,7 @@
       "memory": 8572,
       "uncompressed_size_mb": 7380,
       "available_tags": [
-        "1.17.0",
-        "1.18.0",
+        "latest",
         "develop"
       ]
     }
