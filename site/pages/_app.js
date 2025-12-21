@@ -1,20 +1,17 @@
-import '../styles/globals.css'
-import Layout from '../components/layout'
-import { useState, useEffect } from 'react'
+import "../styles/globals.css";
+import { useState } from "react";
 
+import Header from "../components/header";
+import Footer from "../components/footer";
 
-function MyApp({ Component, pageProps }) {
-  const [searchText, setSearchText] = useState('')
-
-  const changeSearch = event => {
-    setSearchText(event.target.value)
-  }
+export default function App({ Component, pageProps }) {
+  const [search, setSearch] = useState("");
 
   return (
-    <Layout searchText={searchText} changeSearch={changeSearch}>
-      <Component searchText={searchText} {...pageProps} />
-    </Layout>
-  )
+    <>
+      <Header search={search} setSearch={setSearch} />
+      <Component {...pageProps} search={search} />
+      <Footer />
+    </>
+  );
 }
-
-export default MyApp

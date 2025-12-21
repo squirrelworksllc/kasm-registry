@@ -1,9 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
-import { useMemo, useState } from "react";
-
-import Header from "../components/header";
+import { useMemo } from "react";
 
 function b64Encode(str) {
   // browser-safe base64 for unicode
@@ -40,8 +38,7 @@ function RegistryLinkCard({ url }) {
   );
 }
 
-export default function Home({ workspaces = [], listUrl = "" }) {
-  const [search, setSearch] = useState("");
+export default function Home({ workspaces = [], listUrl = "", search = "" }) {
 
   const items = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -57,8 +54,6 @@ export default function Home({ workspaces = [], listUrl = "" }) {
 
   return (
     <>
-      <Header search={search} setSearch={setSearch} />
-
       <main className="mx-auto max-w-6xl px-6 py-10">
         {listUrl ? <RegistryLinkCard url={listUrl} /> : null}
 
