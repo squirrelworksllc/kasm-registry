@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/logo.png" alt="SquirrelWorks Kasm Registry Logo" width="300">
+  <img src="docs/images/Logo.png" alt="SquirrelWorks Kasm Registry Logo" width="300"><br>
 </p>
 
 # SquirrelWorks Kasm Registry
