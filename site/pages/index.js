@@ -1,12 +1,29 @@
 import fs from "fs";
 import path from "path";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
-function CopyableLink({ url }) {
+import Header from "../components/header";
+
+function b64Encode(str) {
+  // browser-safe base64 for unicode
+  return typeof window === "undefined"
+    ? Buffer.from(str, "utf8").toString("base64")
+    : btoa(unescape(encodeURIComponent(str)));
+}
+
+function RegistryLinkCard({ url }) {
   return (
-    <div className="mt-6 w-full max-w-2xl rounded-xl border border-gray-200 bg-white p-4">
-      <div className="text-sm font-semibold text-gray-900">Workspace Registry Link</div>
-      <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <code className="block break-all rounded-lg bg-gray-50 px-3 py-2 text-xs text-gray-800">{url}</code>
+    <div className="mx-auto mt-8 w-full max-w-3xl rounded-2xl bg-white/70 p-5 shadow-sm ring-1 ring-black/5 backdrop-blur">
+      <div className="text-center text-sm font-semibold text-slate-900">
+        Workspace Registry Link
+      </div>
+
+      <div className="mt-3 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+        <code className="block break-all rounded-xl bg-white px-4 py-3 text-xs text-slate-800 ring-1 ring-black/10">
+          {url}
+        </code>
+
         <button
           type="button"
           onClick={async () => {
@@ -14,7 +31,7 @@ function CopyableLink({ url }) {
               await navigator.clipboard.writeText(url);
             } catch (_) {}
           }}
-          className="inline-flex justify-center rounded-lg bg-gray-900 px-3 py-2 text-xs font-semibold text-white hover:bg-gray-800"
+          className="rounded-xl bg-slate-900 px-5 py-3 text-xs font-bold text-white hover:bg-slate-800"
         >
           Copy
         </button>
@@ -24,36 +41,76 @@ function CopyableLink({ url }) {
 }
 
 export default function Home({ workspaces = [], listUrl = "" }) {
-  const items = Array.isArray(workspaces) ? workspaces : [];
+  const [search, setSearch] = useState("");
+
+  const items = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    const arr = Array.isArray(workspaces) ? workspaces : [];
+    if (!q) return arr;
+
+    return arr.filter((ws) => {
+      const name = (ws?.friendly_name || ws?.name || "").toLowerCase();
+      const desc = (ws?.description || "").toLowerCase();
+      return name.includes(q) || desc.includes(q);
+    });
+  }, [workspaces, search]);
+
   return (
-    <main className="mx-auto max-w-6xl px-6 py-10">
-      {listUrl ? <CopyableLink url={listUrl} /> : null}
+    <>
+      <Header search={search} setSearch={setSearch} />
 
-      <h1 className="mt-10 text-2xl font-extrabold tracking-tight">Workspaces</h1>
+      <main className="mx-auto max-w-6xl px-6 py-10">
+        {listUrl ? <RegistryLinkCard url={listUrl} /> : null}
 
-      {items.length === 0 ? (
-        <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6 text-gray-700">
-          <div className="font-semibold">No workspaces found</div>
-          <div className="mt-1 text-sm text-gray-600">If this is unexpected, verify your workspaces folder and rebuild.</div>
+        <div className="mx-auto mt-10 flex w-fit overflow-hidden rounded-lg shadow-sm ring-1 ring-black/10">
+          <div className="bg-white px-5 py-2 text-xs font-bold tracking-[0.35em] text-slate-700">
+            WORKSPACES
+          </div>
+          <div className="bg-blue-600 px-4 py-2 text-xs font-bold text-white">
+            {items.length}
+          </div>
         </div>
-      ) : (
-        <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {items.map((ws) => (
-            <div key={ws?.name || ws?.friendly_name} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-              <div className="text-lg font-bold text-gray-900">{ws?.friendly_name || ws?.name}</div>
-              {ws?.description ? <div className="mt-2 text-sm text-gray-700">{ws.description}</div> : null}
-              <div className="mt-4 flex flex-wrap gap-2 text-xs text-gray-600">
-                {(ws?.compatibility || []).slice(0, 3).map((c, idx) => (
-                  <span key={idx} className="rounded-full border border-gray-200 bg-gray-50 px-2 py-1">
-                    {c?.version || "unknown"}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {items.map((ws) => {
+            const label = ws?.friendly_name || ws?.name || "Workspace";
+            const desc = ws?.description || "";
+            const routeKey = ws?.name || ws?.friendly_name || label;
+            const href = `/new/${b64Encode(routeKey)}`;
+
+            return (
+              <Link
+                key={routeKey}
+                href={href}
+                className="group rounded-2xl bg-white/70 p-6 shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                <div className="text-lg font-extrabold text-slate-900">
+                  {label}
+                </div>
+                {desc ? (
+                  <div className="mt-2 text-sm text-slate-700">{desc}</div>
+                ) : null}
+
+                <div className="mt-5 flex flex-wrap gap-2 text-xs text-slate-600">
+                  {(ws?.compatibility || []).slice(0, 3).map((c, idx) => (
+                    <span
+                      key={idx}
+                      className="rounded-full bg-white px-2 py-1 ring-1 ring-black/10"
+                    >
+                      {c?.version || "unknown"}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-4 text-xs font-semibold text-blue-700 opacity-0 transition group-hover:opacity-100">
+                  View details →
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      )}
-    </main>
+      </main>
+    </>
   );
 }
 
