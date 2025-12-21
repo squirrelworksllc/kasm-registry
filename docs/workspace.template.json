@@ -1,0 +1,12 @@
+{
+  "name": "example_workspace",
+  "friendly_name": "Example Workspace",
+  "description": "Short human-readable description.",
+  "image_src": "icon.png",
+  "compatibility": [
+    {
+      "version": "1.18.x",
+      "available_tags": ["develop", "1.18.0"]
+    }
+  ]
+}
