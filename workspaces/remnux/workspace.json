@@ -29,7 +29,7 @@
       "image": "squirrelworksllc/remnux:1.18.0",
       "cores": 2,
       "memory": 4286,
-      "uncompressed_size_mb": 7380,
+      "uncompressed_size_mb": 10802,
       "available_tags": [
         "1.18.0",
         "develop"
