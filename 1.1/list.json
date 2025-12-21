@@ -3,9 +3,9 @@
   "workspacecount": 3,
   "icon": null,
   "description": "SquirrelWorks Kasm Workspace Registry.",
-  "list_url": "https://squirrelworksllc.github.io/kasm-registry/1.1/list.json/",
+  "list_url": "https://squirrelworksllc.github.io/kasm-registry/1.1/schema/",
   "contact_url": "https://squirrelworksllc.github.io/kasm-registry",
-  "modified": 1766288317746,
+  "modified": 1766289129967,
   "workspaces": [
     {
       "description": "REMnux is a Linux toolkit for reverse-engineering and analyzing malicious software.",
