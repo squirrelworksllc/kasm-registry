@@ -1,0 +1,42 @@
+{
+  "friendly_name": "BitCurator 5",
+  "image_src": "testing.png",
+  "description": "BitCurator is an Ubuntu-based Linux distribution designed to support the needs of library, archive, and museum professionals processing born-digital materials.",
+  "cores": 2,
+  "memory": 8572,
+  "cpu_allocation_method": "Inherit",
+  "docker_registry": "https://index.docker.io/v1/",
+  "categories": [
+    "Desktop",
+    "Archival",
+    "Library"
+  ],
+  "enabled": true,
+  "image_type": "Container",
+  "notes": "**⚠️ WARNING – IMAGE CURRENTLY UNDER TROUBLESHOOTING ⚠️**\n\nThis BitCurator 5 image is still being actively worked on and may exhibit issues. It includes a suite of open source disk imaging, digital forensics, and data analysis tools curated to support modern born-digital archival workflows. See the image’s information page for details.",
+  "architecture": [
+    "amd64"
+  ],
+  "run_config": {
+    "hostname": "bitcurator"
+  },
+  "exec_config": {
+    "go": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --go --url \"$KASM_URL\"'"
+    },
+    "assign": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
+    }
+  },
+  "compatibility": [
+    {
+      "version": "1.18.x",
+      "image": "squirrelworksllc/bitcurator5:latest",
+      "uncompressed_size_mb": 7380,
+      "available_tags": [
+        "latest",
+        "develop"
+      ]
+    }
+  ]
+}

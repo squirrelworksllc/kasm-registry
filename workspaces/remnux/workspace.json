@@ -1,7 +1,22 @@
 {
+  "friendly_name": "REMnux",
+  "image_src": "testing.png",
   "description": "REMnux is a Linux toolkit for reverse-engineering and analyzing malicious software.",
+  "cores": 2,
+  "memory": 4286,
+  "cpu_allocation_method": "Inherit",
   "docker_registry": "https://index.docker.io/v1/",
-  "image_src": "remnux_wkspc.png",
+  "categories": [
+    "Desktop",
+    "Malware",
+    "Analysis"
+  ],
+  "enabled": true,
+  "image_type": "Container",
+  "notes": "**⚠️ WARNING – IMAGE CURRENTLY UNDER TROUBLESHOOTING ⚠️**\n\nDo NOT use this image yet. REMnux is a Linux toolkit for reverse-engineering and analyzing malicious software. See the image’s information page for included tools.",
+  "architecture": [
+    "amd64"
+  ],
   "run_config": {
     "hostname": "remnux"
   },
@@ -13,22 +28,10 @@
       "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
     }
   },
-  "categories": [
-    "Desktop",
-    "Malware",
-    "Reverse-Engineering",
-    "Analysis"
-  ],
-  "friendly_name": "REMnux",
-  "architecture": [
-    "amd64"
-  ],
   "compatibility": [
     {
       "version": "1.18.x",
       "image": "squirrelworksllc/remnux:1.18.0",
-      "cores": 2,
-      "memory": 4286,
       "uncompressed_size_mb": 10802,
       "available_tags": [
         "1.18.0",

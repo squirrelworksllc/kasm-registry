@@ -1,24 +1,20 @@
 {
-  "description": "This is a custom Ubuntu 24.04 LTS build.",
-  "docker_registry": "https://index.docker.io/v1/",
+  "friendly_name": "Ubuntu 24.04 LTS",
   "image_src": "noble_numbat_custom.png",
-  "run_config": {
-    "hostname": "ubuntu"
-  },
-  "exec_config": {
-    "go": {
-      "cmd": "bash -c '/dockerstartup/custom_startup.sh --go --url \"$KASM_URL\"'"
-    },
-    "assign": {
-      "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
-    }
-  },
+  "description": "This is a custom Ubuntu 24.04 LTS build.",
+  "cores": 2,
+  "memory": 2768,
+  "gpu_count": 0,
+  "cpu_allocation_method": "Inherit",
+  "docker_registry": "https://index.docker.io/v1/",
   "categories": [
     "Desktop",
     "Productivity",
     "Development"
   ],
-  "friendly_name": "Ubuntu 24.04 LTS",
+  "enabled": true,
+  "image_type": "Container",
+  "notes": "This is a custom Ubuntu 24.04 LTS build. For included applications see this image's information page.",
   "architecture": [
     "amd64"
   ],
@@ -26,8 +22,6 @@
     {
       "version": "1.18.x",
       "image": "squirrelworksllc/ubuntu-noble-desktop:1.18.0",
-      "cores": 2,
-      "memory": 2048,
       "uncompressed_size_mb": 3492,
       "available_tags": [
         "1.18.0",
