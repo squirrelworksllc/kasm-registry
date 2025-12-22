@@ -1,7 +1,7 @@
 {
   "friendly_name": "Ubuntu 24.04 LTS",
   "image_src": "noble_numbat_custom.png",
-  "description": "This is a custom Ubuntu 24.04 LTS build.",
+  "description": "This is a custom Ubuntu 24.04 LTS build with tools added for InfoSec professionals.",
   "cores": 2,
   "memory": 2768,
   "gpu_count": 0,
@@ -14,7 +14,7 @@
   ],
   "enabled": true,
   "image_type": "Container",
-  "notes": "This is a custom Ubuntu 24.04 LTS build. For included applications see this image's information page.",
+  "notes": "This is a custom Ubuntu 24.04 LTS build. For included applications see this image's information page. It has both a develop and production version.",
   "architecture": [
     "amd64"
   ],

@@ -1,7 +1,7 @@
 {
   "friendly_name": "Ubuntu 24.04 DIND",
   "image_src": "noble_dind_custom.png",
-  "description": "This is a custom Ubuntu 24.04 LTS build.",
+  "description": "This is a custom Ubuntu 24.04 LTS build with DIND.",
   "cores": 2,
   "memory": 2768,
   "cpu_allocation_method": "Inherit",
@@ -12,7 +12,7 @@
     "Development"
   ],
   "image_type": "Container",
-  "notes": "This is a custom Ubuntu 24.04 LTS build that gives Docker-in-a-Docker (DIND).",
+  "notes": "This is a custom Ubuntu 24.04 LTS build that gives Docker-in-a-Docker (DIND). It has both a develop and production version.",
   "architecture": [
     "amd64"
   ],
