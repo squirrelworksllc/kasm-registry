@@ -1,5 +1,5 @@
 param(
-    [int]$WaitSeconds = 120
+    [int]$WaitSeconds = 300
 )
 
 Set-StrictMode -Version Latest
