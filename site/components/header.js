@@ -51,12 +51,12 @@ export default function Header({ searchText, changeSearch }) {
           {/* Nav + Search + Registry Link */}
           <div className="flex flex-col items-center gap-3 md:flex-row md:justify-end">
             <div className="flex items-center gap-2">
-              <Link
-                href="/"
+              <a
+                href={`${router.basePath}/`}
                 className="inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white/90 ring-1 ring-white/20 transition hover:bg-white/10"
               >
                 Library
-              </Link>
+              </a>
               <Link
                 href="/add"
                 className="inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white/90 ring-1 ring-white/20 transition hover:bg-white/10"
