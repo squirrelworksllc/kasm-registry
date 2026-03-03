@@ -295,7 +295,7 @@ export default function New({ workspace }) {
         <div className='w-full lg:w-1/2 p-16 bg-slate-100'>
           <Workspace workspace={combined} icon={icon} inlineImage={inlineImage} />
           <pre className='my-8 overflow-y-auto text-xs'>{JSON.stringify(displayWorkspace(), null, 2)}</pre>
-          <button onClick={downloadZip} className='p-4 relative z-10 px-5 bg-[#2980b9] border-t border-white/20 border-solid hover:bg-slate-900 transition m-2 rounded items-center text-white/70 flex cursor-pointer'>Download</button>
+          <button onClick={downloadZip} className='p-4 relative z-10 px-5 bg-slate-600 border-t border-white/20 border-solid hover:bg-slate-700 transition m-2 rounded items-center text-white flex cursor-pointer'>Download</button>
         </div>
       </div>
     </div>
@@ -317,7 +317,7 @@ function Workspace({ workspace, icon, inlineImage }) {
   }
 
   const installButton = () => {
-    return <button className={"text-xs w-full p-4 py-1 rounded-lg flex justify-center items-center bg-blue-500 font-bold text-white"}>Install</button>
+    return <button className={"text-xs w-full p-4 py-1 rounded-lg flex justify-center items-center bg-slate-600 font-bold text-white hover:bg-slate-700"}>Install</button>
   }
   const editButton = () => {
     return <div className="text-xs text-color w-full p-4 py-1 rounded-lg bg-black/5 flex justify-center items-center">Edit</div>
@@ -345,7 +345,7 @@ function Workspace({ workspace, icon, inlineImage }) {
               <span key={'arch' + index} className="p-2 py-0 m-[1px] inline-block rounded bg-slate-400/70">{arch}</span>
             ))}
 
-            {workspace.categories.map((cat, index) => (
+            {(workspace.categories || []).map((cat, index) => (
               <span key={'cat' + index} className="p-2 py-0 m-[1px] inline-block rounded bg-slate-300/90">{cat}</span>
             ))}
           </div>
