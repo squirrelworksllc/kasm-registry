@@ -43,7 +43,7 @@ export default function Header({ searchText, changeSearch }) {
             <h1 className="text-2xl font-bold tracking-tight text-white">
               {process.env.name || "Kasm Registry"}
             </h1>
-            <div className="mt-1 flex flex-wrap justify-center gap-0.5 text-xs tracking-[0.35em] uppercase text-white/80 md:justify-start">
+            <div className="mt-1 flex flex-wrap justify-center gap-0.5 text-xs tracking-[0.35em] uppercase text-[#c0c0c0] md:justify-start">
               <span>W</span><span>o</span><span>r</span><span>k</span><span>s</span><span>p</span><span>a</span><span>c</span><span>e</span>
               <span>&nbsp;</span>
               <span>R</span><span>e</span><span>g</span><span>i</span><span>s</span><span>t</span><span>r</span><span>y</span>
@@ -72,13 +72,13 @@ export default function Header({ searchText, changeSearch }) {
               value={searchText ?? ""}
               onChange={(e) => changeSearch?.(e.target.value)}
               placeholder="Search for workspace"
-              className="w-full rounded-xl border-0 bg-white/10 px-4 py-2 text-sm text-white placeholder:text-white/50 ring-1 ring-white/20 outline-none focus:bg-white/15 focus:ring-2 focus:ring-white/30 md:w-64"
+              className="w-full rounded-xl border-0 bg-white/10 px-4 py-2 text-sm text-white placeholder:text-[#a0a0a0] ring-1 ring-white/20 outline-none focus:bg-white/15 focus:ring-2 focus:ring-white/30 md:w-64"
             />
 
             <button
               type="button"
               onClick={copyToClipboard}
-              className="rounded-xl bg-slate-700/80 px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/20 transition hover:bg-slate-600/90"
+              className="rounded-xl bg-[#212830] px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/20 transition hover:bg-[#2b333d]"
             >
               Workspace Registry Link
             </button>

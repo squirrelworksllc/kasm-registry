@@ -91,30 +91,30 @@ export default function Home({ searchText }) {
       </Head>
 
       <main className="mx-auto max-w-6xl px-6 py-10">
-        <h2 className="text-2xl font-semibold text-slate-800">
+        <h2 className="text-2xl font-semibold text-[#d0d0d0]">
           {process.env.name || "Kasm Workspaces"}
         </h2>
 
         <div className="mt-6 flex flex-wrap items-center gap-4">
-          <div className="flex overflow-hidden rounded-lg shadow ring-1 ring-black/10">
-            <div className="bg-slate-200/90 px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+          <div className="flex overflow-hidden rounded-lg shadow ring-1 ring-white/10">
+            <div className="bg-[#3C444F] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white">
               Workspaces
             </div>
-            <div className="bg-slate-600 px-4 py-2 text-xs font-bold text-white">
+            <div className="bg-[#3C444F] px-4 py-2 text-xs font-bold text-white">
               {workspaces ? count : "—"}
             </div>
           </div>
 
           {versions && versions.length > 0 && (
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-slate-600">Kasm Version</span>
+              <span className="text-sm font-medium text-[#c0c0c0]">Kasm Version</span>
               <select
                 value={version ?? ""}
                 onChange={(e) => updateVersion(e.target.value)}
-                className="rounded-lg border border-slate-400 bg-slate-100 px-3 py-2 text-sm text-slate-800 focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500"
+                className="rounded-lg border border-white/15 bg-[#3C444F] px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none focus:ring-1 focus:ring-white/30"
               >
                 {versions.map((v) => (
-                  <option key={v} value={v}>
+                  <option key={v} value={v} className="bg-[#2b333d] text-white">
                     {v}.x
                   </option>
                 ))}
@@ -129,7 +129,7 @@ export default function Home({ searchText }) {
               <Workspace key={workspace.friendly_name || workspace.name} workspace={workspace} />
             ))
           ) : (
-            <p className="col-span-full text-slate-600">
+            <p className="col-span-full text-[#a0a0a0]">
               No workspaces found
               {searchText?.trim() ? ` matching "${searchText.trim()}"` : ""}.
             </p>

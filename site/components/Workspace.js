@@ -15,7 +15,7 @@ export default function Workspace({ workspace }) {
   return (
     <Link
       href={href}
-      className="group relative flex h-[88px] w-full max-w-[280px] cursor-pointer items-center justify-center gap-3 rounded-lg bg-slate-100/90 p-3 shadow transition-all hover:bg-gradient-to-r hover:from-slate-600 hover:to-slate-700 hover:text-white hover:shadow-xl"
+      className="group relative flex h-[88px] w-full max-w-[280px] cursor-pointer items-center justify-center gap-3 rounded-lg bg-[#1f242b] p-3 shadow transition-all hover:bg-[#252b34] hover:shadow-lg"
     >
       {iconSrc ? (
         <img
@@ -25,13 +25,13 @@ export default function Workspace({ workspace }) {
           loading="lazy"
         />
       ) : (
-        <div className="h-12 w-12 flex-shrink-0 rounded-lg bg-slate-300/80" />
+        <div className="h-12 w-12 flex-shrink-0 rounded-lg bg-white/10" />
       )}
       <div className="min-w-0 flex-1 text-left">
-        <div className="font-bold text-slate-800 group-hover:text-white">
+        <div className="font-bold text-white">
           {friendlyName}
         </div>
-        <div className="text-xs text-slate-600 group-hover:text-white/90">
+        <div className="text-xs text-[#a0a0a0]">
           {category}
         </div>
       </div>
