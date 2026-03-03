@@ -1,20 +1,15 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function Workspace({ workspace }) {
-  const router = useRouter();
-  const base = router.basePath || "";
   const friendlyName = workspace?.friendly_name || workspace?.name || "Workspace";
   const slug = typeof friendlyName === "string" ? btoa(friendlyName) : "";
-  const href = `${base}/new/${slug}`;
   const category = workspace?.categories?.[0] || "Unknown";
-  const iconSrc = workspace?.image_src
-    ? `${base}/icons/${workspace.image_src}`
-    : null;
+  // Use relative path so under basePath (e.g. /kasm-registry/1.1/) icons resolve to .../1.1/icons/...
+  const iconSrc = workspace?.image_src ? `icons/${workspace.image_src}` : null;
 
   return (
     <Link
-      href={href}
+      href={`/new/${slug}`}
       className="group relative flex h-[88px] w-full max-w-[280px] cursor-pointer items-center justify-center gap-3 rounded-lg bg-[#1f242b] p-3 shadow transition-all hover:bg-[#252b34] hover:shadow-lg"
     >
       {iconSrc ? (
