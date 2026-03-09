@@ -3,7 +3,7 @@
   "image_src": "noble_dind_custom.png",
   "description": "This is a custom Ubuntu 24.04 LTS build with DIND.",
   "cores": 2,
-  "memory": 2768,
+  "memory": 2100,
   "cpu_allocation_method": "Inherit",
   "docker_registry": "https://index.docker.io/v1/",
   "categories": [
@@ -20,7 +20,7 @@
     {
       "version": "1.18.x",
       "image": "squirrelworksllc/ubuntu-noble-dind:1.18.0",
-      "uncompressed_size_mb": 1785,
+      "uncompressed_size_mb": 7056,
       "available_tags": [
         "1.18.0",
         "develop"
