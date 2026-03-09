@@ -3,7 +3,7 @@
   "image_src": "noble_numbat_custom.png",
   "description": "This is a custom Ubuntu 24.04 LTS build with tools added for InfoSec professionals.",
   "cores": 2,
-  "memory": 2768,
+  "memory": 5100,
   "gpu_count": 0,
   "cpu_allocation_method": "Inherit",
   "docker_registry": "https://index.docker.io/v1/",
