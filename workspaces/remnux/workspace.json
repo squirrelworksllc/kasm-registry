@@ -6,8 +6,6 @@
   "memory": 8192,
   "cpu_allocation_method": "Inherit",
   "docker_registry": "https://index.docker.io/v1/",
-  "image": "squirrelworksllc/remnux:1.18.1",
-  "uncompressed_size_mb": 29698,
   "categories": [
     "Desktop",
     "Malware",
@@ -19,12 +17,16 @@
     "amd64"
   ],
   "compatibility": [
-    "1.18.x"
-  ],
-  "available_tags": [
-    "1.18.1",
-    "1.18.0",
-    "latest",
-    "develop"
+    {
+      "version": "1.18.x",
+      "image": "squirrelworksllc/remnux:1.18.1",
+      "uncompressed_size_mb": 29698,
+      "available_tags": [
+        "1.18.1",
+        "1.18.0",
+        "latest",
+        "develop"
+      ]
+    }
   ]
 }
