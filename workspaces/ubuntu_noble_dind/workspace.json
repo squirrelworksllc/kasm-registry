@@ -20,9 +20,11 @@
     {
       "version": "1.18.x",
       "image": "squirrelworksllc/ubuntu-noble-dind:1.18.0",
-      "uncompressed_size_mb": 7056,
+      "uncompressed_size_mb": 7035,
       "available_tags": [
+        "1.18.1",
         "1.18.0",
+        "latest",
         "develop"
       ]
     }
