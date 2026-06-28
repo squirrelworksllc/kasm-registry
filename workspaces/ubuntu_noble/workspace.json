@@ -3,7 +3,7 @@
   "image_src": "noble_numbat_custom.png",
   "description": "This is a custom Ubuntu 24.04 LTS build with tools added for InfoSec professionals.",
   "cores": 2,
-  "memory": 3072,
+  "memory": 4096,
   "gpu_count": 0,
   "cpu_allocation_method": "Inherit",
   "docker_registry": "https://index.docker.io/v1/",
@@ -24,6 +24,7 @@
       "image": "squirrelworksllc/ubuntu-noble-desktop:1.18.0",
       "uncompressed_size_mb": 4350,
       "available_tags": [
+        "1.19.0",
         "1.18.1",
         "1.18.0",
         "latest",

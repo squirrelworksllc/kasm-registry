@@ -22,6 +22,7 @@
       "image": "squirrelworksllc/remnux:1.18.1",
       "uncompressed_size_mb": 8100,
       "available_tags": [
+        "1.19.0",
         "1.18.1",
         "1.18.0",
         "latest",
