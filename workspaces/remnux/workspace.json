@@ -30,7 +30,7 @@
     },
     {
       "version": "1.19.x",
-      "image": "squirrelworksllc/remnux:1.18.1",
+      "image": "squirrelworksllc/remnux:latest",
       "uncompressed_size_mb": 8100,
       "available_tags": [
         "1.19.0",
