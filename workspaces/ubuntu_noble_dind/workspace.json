@@ -22,9 +22,18 @@
       "image": "squirrelworksllc/ubuntu-noble-dind:1.18.0",
       "uncompressed_size_mb": 1900,
       "available_tags": [
-        "1.19.0",
         "1.18.1",
         "1.18.0",
+        "latest",
+        "develop"
+      ]
+    },
+    {
+      "version": "1.19.x",
+      "image": "squirrelworksllc/ubuntu-noble-dind:latest",
+      "uncompressed_size_mb": 1900,
+      "available_tags": [
+        "1.19.0",
         "latest",
         "develop"
       ]
