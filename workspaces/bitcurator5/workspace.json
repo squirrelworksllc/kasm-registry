@@ -31,21 +31,19 @@
   "compatibility": [
     {
       "version": "1.18.x",
-      "image": "squirrelworksllc/bitcurator5:latest",
+      "image": "squirrelworksllc/bitcurator5:1.18.1",
       "uncompressed_size_mb": 7380,
       "available_tags": [
         "1.18.1",
-        "latest",
         "develop"
       ]
     },
     {
       "version": "1.19.x",
-      "image": "squirrelworksllc/bitcurator5:latest",
+      "image": "squirrelworksllc/bitcurator5:1.19.0",
       "uncompressed_size_mb": 7380,
       "available_tags": [
         "1.19.0",
-        "latest",
         "develop"
       ]
     }
