@@ -22,7 +22,7 @@
     {
       "version": "1.18.x",
       "image": "squirrelworksllc/ubuntu-noble-desktop:1.18.0",
-      "uncompressed_size_mb": 4350,
+      "uncompressed_size_mb": 15500,
       "available_tags": [
         "1.18.1",
         "1.18.0",
@@ -32,7 +32,7 @@
     {
       "version": "1.19.x",
       "image": "squirrelworksllc/ubuntu-noble-desktop:1.19.0",
-      "uncompressed_size_mb": 4350,
+      "uncompressed_size_mb": 15500,
       "available_tags": [
         "1.19.0",
         "develop"
