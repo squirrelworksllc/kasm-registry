@@ -20,7 +20,7 @@
     {
       "version": "1.18.x",
       "image": "squirrelworksllc/remnux:1.18.1",
-      "uncompressed_size_mb": 8100,
+      "uncompressed_size_mb": 9000,
       "available_tags": [
         "1.18.1",
         "1.18.0",
@@ -30,7 +30,7 @@
     {
       "version": "1.19.x",
       "image": "squirrelworksllc/remnux:1.19.0",
-      "uncompressed_size_mb": 8100,
+      "uncompressed_size_mb": 9000,
       "available_tags": [
         "1.19.0",
         "develop"
