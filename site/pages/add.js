@@ -7,7 +7,7 @@ export default function NewPage() {
         <ul className="mt-2 list-disc pl-5 text-sm text-[#a0a0a0]">
           <li>In Kasm, add a Workspace Registry using the root URL.</li>
           <li>Use the copy button on the Library page for the correct URL.</li>
-          <li>See official Kasm Documentation for instructions on adding a <a href="https://docs.kasm.com/docs/1.19.0/how-to/workspaces-sessions/container-workspace/workspace-registry">3rd Party Registry</a></li>
+          <li>See official Kasm Documentation for instructions on adding a <a href="https://docs.kasm.com/docs/1.19.0/how-to/workspaces-sessions/container-workspace/workspace-registry" target="_blank"><u>3rd Party Registry</u></a></li>
         </ul>
       </div>
     </main>
